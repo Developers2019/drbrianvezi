@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="stagingclinicModelStoreContainer" CdmEntityContainer="stagingclinicEntities1">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="stagingclinicModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="stagingclinicModel.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="stagingclinicModel.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="stagingclinicModel.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="stagingclinicModel.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailLogs">
+      <EntityTypeMapping TypeName="stagingclinicModel.EmailLog">
+        <MappingFragment StoreEntitySet="EmailLog">
+          <ScalarProperty Name="EmailLogID" ColumnName="EmailLogID" />
+          <ScalarProperty Name="EmailStatus" ColumnName="EmailStatus" />
+          <ScalarProperty Name="EmailAddressTo" ColumnName="EmailAddressTo" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CapturedDate" ColumnName="CapturedDate" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MemberDetails">
+      <EntityTypeMapping TypeName="stagingclinicModel.MemberDetail">
+        <MappingFragment StoreEntitySet="MemberDetails">
+          <ScalarProperty Name="MemberDetailId" ColumnName="MemberDetailId" />
+          <ScalarProperty Name="Member_Name" ColumnName="Member_Name" />
+          <ScalarProperty Name="Member_Surname" ColumnName="Member_Surname" />
+          <ScalarProperty Name="Member_Residential_Address" ColumnName="Member_Residential_Address" />
+          <ScalarProperty Name="Member_Postal_Address" ColumnName="Member_Postal_Address" />
+          <ScalarProperty Name="Member_Employer_Name" ColumnName="Member_Employer_Name" />
+          <ScalarProperty Name="Member_City" ColumnName="Member_City" />
+          <ScalarProperty Name="Member_Town" ColumnName="Member_Town" />
+          <ScalarProperty Name="Member_Tel_Home" ColumnName="Member_Tel_Home" />
+          <ScalarProperty Name="Member_Tel_Work" ColumnName="Member_Tel_Work" />
+          <ScalarProperty Name="Member_Tel_Cell" ColumnName="Member_Tel_Cell" />
+          <ScalarProperty Name="Member_Email" ColumnName="Member_Email" />
+          <ScalarProperty Name="Member_Occupation" ColumnName="Member_Occupation" />
+          <ScalarProperty Name="Member_ID_Number" ColumnName="Member_ID_Number" />
+          <ScalarProperty Name="CapturedDateTime" ColumnName="CapturedDateTime" />
+          <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Appointment">
+      <EntityTypeMapping TypeName="stagingclinicModel.Table_Appointment">
+        <MappingFragment StoreEntitySet="Table_Appointment">
+          <ScalarProperty Name="Appointment_ID" ColumnName="Appointment_ID" />
+          <ScalarProperty Name="Client_ID" ColumnName="Client_ID" />
+          <ScalarProperty Name="Appointment_Duration" ColumnName="Appointment_Duration" />
+          <ScalarProperty Name="Appointment_Slot_ID" ColumnName="Appointment_Slot_ID" />
+          <ScalarProperty Name="IsAppointCancelled" ColumnName="IsAppointCancelled" />
+          <ScalarProperty Name="IsRescheduled" ColumnName="IsRescheduled" />
+          <ScalarProperty Name="ReasonForCancelling" ColumnName="ReasonForCancelling" />
+          <ScalarProperty Name="CapturedDatetime" ColumnName="CapturedDatetime" />
+          <ScalarProperty Name="EditedDateTime" ColumnName="EditedDateTime" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="CurrentPatient" ColumnName="CurrentPatient" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="Contact_Number" ColumnName="Contact Number" />
+          <ScalarProperty Name="Passport_Number" ColumnName="Passport Number" />
+          <ScalarProperty Name="Id_Number" ColumnName="Id Number" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Appointment_Slot">
+      <EntityTypeMapping TypeName="stagingclinicModel.Table_Appointment_Slot">
+        <MappingFragment StoreEntitySet="Table_Appointment_Slot">
+          <ScalarProperty Name="Appointment_SLot_ID" ColumnName="Appointment_SLot_ID" />
+          <ScalarProperty Name="Appointment_Slot_Date" ColumnName="Appointment_Slot_Date" />
+          <ScalarProperty Name="Appointment_Slot_Start" ColumnName="Appointment_Slot_Start" />
+          <ScalarProperty Name="Appointment_Slot_End" ColumnName="Appointment_Slot_End" />
+          <ScalarProperty Name="EditedDateTime" ColumnName="EditedDateTime" />
+          <ScalarProperty Name="CapturedDateTime" ColumnName="CapturedDateTime" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="Booked" ColumnName="Booked" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Client_Note">
+      <EntityTypeMapping TypeName="stagingclinicModel.Table_Client_Note">
+        <MappingFragment StoreEntitySet="Table_Client_Note">
+          <ScalarProperty Name="Client_Note_ID" ColumnName="Client_Note_ID" />
+          <ScalarProperty Name="Client_ID" ColumnName="Client_ID" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Appointment_ID" ColumnName="Appointment_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_ClientData">
+      <EntityTypeMapping TypeName="stagingclinicModel.Table_ClientData">
+        <MappingFragment StoreEntitySet="Table_ClientData">
+          <ScalarProperty Name="Client_ClientID" ColumnName="Client_ClientID" />
+          <ScalarProperty Name="Client_Name" ColumnName="Client_Name" />
+          <ScalarProperty Name="Client_Surname" ColumnName="Client_Surname" />
+          <ScalarProperty Name="Client_Address" ColumnName="Client_Address" />
+          <ScalarProperty Name="Client_Street2" ColumnName="Client_Street2" />
+          <ScalarProperty Name="Clientt_Suburb" ColumnName="Clientt_Suburb" />
+          <ScalarProperty Name="Client_Town" ColumnName="Client_Town" />
+          <ScalarProperty Name="Client_Province" ColumnName="Client_Province" />
+          <ScalarProperty Name="Client_Country" ColumnName="Client_Country" />
+          <ScalarProperty Name="Client_Tel_Home" ColumnName="Client_Tel_Home" />
+          <ScalarProperty Name="Client_Tel_Work" ColumnName="Client_Tel_Work" />
+          <ScalarProperty Name="Client_Tel_Cell" ColumnName="Client_Tel_Cell" />
+          <ScalarProperty Name="Client_Email" ColumnName="Client_Email" />
+          <ScalarProperty Name="Client_Reference" ColumnName="Client_Reference" />
+          <ScalarProperty Name="Client_ID_Number" ColumnName="Client_ID_Number" />
+          <ScalarProperty Name="Client_Date_Of_birth" ColumnName="Client_Date_Of_birth" />
+          <ScalarProperty Name="CapturedDateTime" ColumnName="CapturedDateTime" />
+          <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="BMI_Reading" ColumnName="BMI_Reading" />
+          <ScalarProperty Name="Dep_Code" ColumnName="Dep_Code" />
+          <ScalarProperty Name="Employer_Name" ColumnName="Employer_Name" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="PassportNumber" ColumnName="PassportNumber" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Invoice_Info">
+      <EntityTypeMapping TypeName="stagingclinicModel.Table_Invoice_Info">
+        <MappingFragment StoreEntitySet="Table_Invoice_Info">
+          <ScalarProperty Name="Invoice_Info_ID" ColumnName="Invoice_Info_ID" />
+          <ScalarProperty Name="Invoice_Number" ColumnName="Invoice_Number" />
+          <ScalarProperty Name="Invoice_Client_ID" ColumnName="Invoice_Client_ID" />
+          <ScalarProperty Name="Invoice_Consultation" ColumnName="Invoice_Consultation" />
+          <ScalarProperty Name="Invoice_Date" ColumnName="Invoice_Date" />
+          <ScalarProperty Name="Invoice_Paid" ColumnName="Invoice_Paid" />
+          <ScalarProperty Name="Invoice_Payment_method" ColumnName="Invoice_Payment_method" />
+          <ScalarProperty Name="Invoice_Is_Appointment" ColumnName="Invoice_Is_Appointment" />
+          <ScalarProperty Name="Invoice_Is_Supplements" ColumnName="Invoice_Is_Supplements" />
+          <ScalarProperty Name="Invoice_Total" ColumnName="Invoice_Total" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Id_No" ColumnName="Id_No" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="ContactDetails" ColumnName="ContactDetails" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Invoice_Supplements">
+      <EntityTypeMapping TypeName="stagingclinicModel.Table_Invoice_Supplements">
+        <MappingFragment StoreEntitySet="Table_Invoice_Supplements">
+          <ScalarProperty Name="Invoice_Supplements_ID" ColumnName="Invoice_Supplements_ID" />
+          <ScalarProperty Name="Invoice_Info_ID" ColumnName="Invoice_Info_ID" />
+          <ScalarProperty Name="Supplement_ID" ColumnName="Supplement_ID" />
+          <ScalarProperty Name="Invoice_Supplements_Price" ColumnName="Invoice_Supplements_Price" />
+          <ScalarProperty Name="Invoice_Supplements_Quantity" ColumnName="Invoice_Supplements_Quantity" />
+          <ScalarProperty Name="Invoice_Supplements_TotalPrice" ColumnName="Invoice_Supplements_TotalPrice" />
+          <ScalarProperty Name="CapturedDateTime" ColumnName="CapturedDateTime" />
+          <ScalarProperty Name="EditedDateTime" ColumnName="EditedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Supplement">
+      <EntityTypeMapping TypeName="stagingclinicModel.Table_Supplement">
+        <MappingFragment StoreEntitySet="Table_Supplement">
+          <ScalarProperty Name="Supplement_ID" ColumnName="Supplement_ID" />
+          <ScalarProperty Name="Supplement_Description" ColumnName="Supplement_Description" />
+          <ScalarProperty Name="Supplement_Cost_Excl" ColumnName="Supplement_Cost_Excl" />
+          <ScalarProperty Name="Supplement_Cost_Incl" ColumnName="Supplement_Cost_Incl" />
+          <ScalarProperty Name="Supplement_Supplier_ID" ColumnName="Supplement_Supplier_ID" />
+          <ScalarProperty Name="Supplement_Min_Levels" ColumnName="Supplement_Min_Levels" />
+          <ScalarProperty Name="Supplement_Stock_Levels" ColumnName="Supplement_Stock_Levels" />
+          <ScalarProperty Name="Supplement_Nappi_Code" ColumnName="Supplement_Nappi_Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Supplier">
+      <EntityTypeMapping TypeName="stagingclinicModel.Table_Supplier">
+        <MappingFragment StoreEntitySet="Table_Supplier">
+          <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
+          <ScalarProperty Name="Supplier_Contact_Person" ColumnName="Supplier_Contact_Person" />
+          <ScalarProperty Name="Supplier_Cell" ColumnName="Supplier_Cell" />
+          <ScalarProperty Name="Supplier_Fax" ColumnName="Supplier_Fax" />
+          <ScalarProperty Name="Supplier_Email" ColumnName="Supplier_Email" />
+          <ScalarProperty Name="Supplier_Bank" ColumnName="Supplier_Bank" />
+          <ScalarProperty Name="Supplier_Branch_Code" ColumnName="Supplier_Branch_Code" />
+          <ScalarProperty Name="Supplier_Account_Number" ColumnName="Supplier_Account_Number" />
+          <ScalarProperty Name="Supplier_Type_Of_Account" ColumnName="Supplier_Type_Of_Account" />
+          <ScalarProperty Name="Supplier_Comments" ColumnName="Supplier_Comments" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Medical_Aid_Details">
+      <EntityTypeMapping TypeName="stagingclinicModel.Medical_Aid_Details">
+        <MappingFragment StoreEntitySet="Medical_Aid_Details">
+          <ScalarProperty Name="Med_Id" ColumnName="Med_Id" />
+          <ScalarProperty Name="Med_Aid_Name" ColumnName="Med_Aid_Name" />
+          <ScalarProperty Name="Med_Aid_No" ColumnName="Med_Aid_No" />
+          <ScalarProperty Name="Med_Option" ColumnName="Med_Option" />
+          <ScalarProperty Name="Client_Id" ColumnName="Client_Id" />
+          <ScalarProperty Name="CaptureDate" ColumnName="CaptureDate" />
+          <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Next_Of_Kin">
+      <EntityTypeMapping TypeName="stagingclinicModel.Next_Of_Kin">
+        <MappingFragment StoreEntitySet="Next_Of_Kin">
+          <ScalarProperty Name="Kin_Id" ColumnName="Kin_Id" />
+          <ScalarProperty Name="Kin_Name" ColumnName="Kin_Name" />
+          <ScalarProperty Name="Kin_Relationship" ColumnName="Kin_Relationship" />
+          <ScalarProperty Name="Kin_HM_Tel_No" ColumnName="Kin_HM_Tel_No" />
+          <ScalarProperty Name="Kin_WK_Tel_No" ColumnName="Kin_WK_Tel_No" />
+          <ScalarProperty Name="Kin_Cell_Tel_No" ColumnName="Kin_Cell_Tel_No" />
+          <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+          <ScalarProperty Name="CaptureDate" ColumnName="CaptureDate" />
+          <ScalarProperty Name="Client_Id" ColumnName="Client_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_ArticleKeyword">
+      <EntityTypeMapping TypeName="stagingclinicModel.Table_ArticleKeyword">
+        <MappingFragment StoreEntitySet="Table_ArticleKeyword">
+          <ScalarProperty Name="ArticleKeywordID" ColumnName="ArticleKeywordID" />
+          <ScalarProperty Name="Keyword" ColumnName="Keyword" />
+          <ScalarProperty Name="OriginalArticle" ColumnName="OriginalArticle" />
+          <ScalarProperty Name="LinkedArticle" ColumnName="LinkedArticle" />
+          <ScalarProperty Name="CapturedDateTime" ColumnName="CapturedDateTime" />
+          <ScalarProperty Name="EditedDateTime" ColumnName="EditedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_BlogPost">
+      <EntityTypeMapping TypeName="stagingclinicModel.Table_BlogPost">
+        <MappingFragment StoreEntitySet="Table_BlogPost">
+          <ScalarProperty Name="BlogPost_ID" ColumnName="BlogPost_ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="FileData" ColumnName="FileData" />
+          <ScalarProperty Name="ContentType" ColumnName="ContentType" />
+          <ScalarProperty Name="BlogText" ColumnName="BlogText" />
+          <ScalarProperty Name="CapturedDateTime" ColumnName="CapturedDateTime" />
+          <ScalarProperty Name="EditedDateTime" ColumnName="EditedDateTime" />
+          <ScalarProperty Name="CapturedBy" ColumnName="CapturedBy" />
+          <ScalarProperty Name="EditedBy" ColumnName="EditedBy" />
+          <ScalarProperty Name="PostViews" ColumnName="PostViews" />
+          <ScalarProperty Name="StringParam" ColumnName="StringParam" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ThumbFileData" ColumnName="ThumbFileData" />
+          <ScalarProperty Name="ThumbContentType" ColumnName="ThumbContentType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_BlogPostKeyword">
+      <EntityTypeMapping TypeName="stagingclinicModel.Table_BlogPostKeyword">
+        <MappingFragment StoreEntitySet="Table_BlogPostKeyword">
+          <ScalarProperty Name="BlogPostKeywordID" ColumnName="BlogPostKeywordID" />
+          <ScalarProperty Name="Keyword" ColumnName="Keyword" />
+          <ScalarProperty Name="BlogPost_ID" ColumnName="BlogPost_ID" />
+          <ScalarProperty Name="CapturedDateTime" ColumnName="CapturedDateTime" />
+          <ScalarProperty Name="EditedDateTime" ColumnName="EditedDateTime" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="EditedBy" ColumnName="EditedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_MedicalCertificate">
+      <EntityTypeMapping TypeName="stagingclinicModel.Table_MedicalCertificate">
+        <MappingFragment StoreEntitySet="Table_MedicalCertificate">
+          <ScalarProperty Name="MedicalCertificateID" ColumnName="MedicalCertificateID" />
+          <ScalarProperty Name="Client_ID" ColumnName="Client_ID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="ConsultedDateTime" ColumnName="ConsultedDateTime" />
+          <ScalarProperty Name="AdmittedFrom" ColumnName="AdmittedFrom" />
+          <ScalarProperty Name="AdmittedTo" ColumnName="AdmittedTo" />
+          <ScalarProperty Name="UnfitSince" ColumnName="UnfitSince" />
+          <ScalarProperty Name="NatureOfIllness" ColumnName="NatureOfIllness" />
+          <ScalarProperty Name="ResumeDate" ColumnName="ResumeDate" />
+          <ScalarProperty Name="SignatureDate" ColumnName="SignatureDate" />
+          <ScalarProperty Name="CapturedDateTime" ColumnName="CapturedDateTime" />
+          <ScalarProperty Name="EditedDateTime" ColumnName="EditedDateTime" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="EditedBy" ColumnName="EditedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Prescription">
+      <EntityTypeMapping TypeName="stagingclinicModel.Table_Prescription">
+        <MappingFragment StoreEntitySet="Table_Prescription">
+          <ScalarProperty Name="PrescriptionID" ColumnName="PrescriptionID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="IdentificationCode" ColumnName="IdentificationCode" />
+          <ScalarProperty Name="PrescriptionNote" ColumnName="PrescriptionNote" />
+          <ScalarProperty Name="SignatureDateTime" ColumnName="SignatureDateTime" />
+          <ScalarProperty Name="CapturedDateTime" ColumnName="CapturedDateTime" />
+          <ScalarProperty Name="EditedDateTime" ColumnName="EditedDateTime" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserProfiles">
+      <EntityTypeMapping TypeName="stagingclinicModel.UserProfile">
+        <MappingFragment StoreEntitySet="UserProfile">
+          <ScalarProperty Name="UserProfileId" ColumnName="UserProfileId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="stagingclinicModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

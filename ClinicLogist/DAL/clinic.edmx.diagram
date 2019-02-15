@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2128dd722336474086af323be53b1658" Name="Diagram1">
+        <EntityTypeShape EntityType="stagingclinicModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="stagingclinicModel.AspNetRole" Width="1.5" PointX="5.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="stagingclinicModel.AspNetUserClaim" Width="1.5" PointX="10.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="stagingclinicModel.AspNetUserLogin" Width="1.5" PointX="10.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="stagingclinicModel.AspNetUser" Width="1.5" PointX="8" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="stagingclinicModel.EmailLog" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="stagingclinicModel.MemberDetail" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="stagingclinicModel.Table_Appointment" Width="1.5" PointX="6" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="stagingclinicModel.Table_Appointment_Slot" Width="1.5" PointX="3.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="stagingclinicModel.Table_Client_Note" Width="1.5" PointX="8.25" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="stagingclinicModel.Table_ClientData" Width="1.5" PointX="0.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="stagingclinicModel.Table_Invoice_Info" Width="1.5" PointX="3" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="stagingclinicModel.Table_Invoice_Supplements" Width="1.5" PointX="8.25" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="stagingclinicModel.Table_Supplement" Width="1.5" PointX="6" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="stagingclinicModel.Table_Supplier" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="stagingclinicModel.Medical_Aid_Details" Width="1.5" PointX="3" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="stagingclinicModel.Next_Of_Kin" Width="1.5" PointX="3" PointY="24.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="stagingclinicModel.Table_ArticleKeyword" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="stagingclinicModel.Table_BlogPost" Width="1.5" PointX="10.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="stagingclinicModel.Table_BlogPostKeyword" Width="1.5" PointX="13" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="stagingclinicModel.Table_MedicalCertificate" Width="1.5" PointX="3" PointY="28.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="stagingclinicModel.Table_Prescription" Width="1.5" PointX="3" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="stagingclinicModel.UserProfile" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="stagingclinicModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="stagingclinicModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="stagingclinicModel.FK_MemberDetails_Table_ClientData" ManuallyRouted="false" />
+        <AssociationConnector Association="stagingclinicModel.FK_Table_Appointment_Table_Appointment_Slot" ManuallyRouted="false" />
+        <AssociationConnector Association="stagingclinicModel.FK_Table_Appointment_Table_ClientData" ManuallyRouted="false" />
+        <AssociationConnector Association="stagingclinicModel.FK_Table_Client_Note_Table_Appointment" ManuallyRouted="false" />
+        <AssociationConnector Association="stagingclinicModel.FK_Medical_Aid_Details_Table_ClientData" ManuallyRouted="false" />
+        <AssociationConnector Association="stagingclinicModel.FK_Next_Of_Kin_Table_ClientData" ManuallyRouted="false" />
+        <AssociationConnector Association="stagingclinicModel.FK_Table_Invoice_Info_Table_ClientData" ManuallyRouted="false" />
+        <AssociationConnector Association="stagingclinicModel.FK_Table_MedicalCertificate_Table_MedicalCertificate" ManuallyRouted="false" />
+        <AssociationConnector Association="stagingclinicModel.FK_Table_Prescription_Table_ClientData" ManuallyRouted="false" />
+        <AssociationConnector Association="stagingclinicModel.FK_Table_Invoice_Supplements_Table_Invoice_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="stagingclinicModel.FK_Table_Invoice_Supplements_Table_Supplement" ManuallyRouted="false" />
+        <AssociationConnector Association="stagingclinicModel.FK_Table_Supplement_Table_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="stagingclinicModel.FK_Table_BlogPostKeyword_Table_BlogPost" ManuallyRouted="false" />
+        <AssociationConnector Association="stagingclinicModel.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

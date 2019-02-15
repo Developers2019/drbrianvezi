@@ -1,0 +1,662 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="stagingclinicModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+    <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+  </EntityType>
+  <EntityType Name="EmailLog">
+    <Key>
+      <PropertyRef Name="EmailLogID" />
+    </Key>
+    <Property Name="EmailLogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmailStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EmailAddressTo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CapturedDate" Type="DateTime" Precision="3" />
+    <Property Name="Url" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MemberDetail">
+    <Key>
+      <PropertyRef Name="MemberDetailId" />
+    </Key>
+    <Property Name="MemberDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Member_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Member_Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Member_Residential_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Member_Postal_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Member_Employer_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Member_City" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Member_Town" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Member_Tel_Home" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Member_Tel_Work" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Member_Tel_Cell" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Member_Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Member_Occupation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Member_ID_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CapturedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="EditedDate" Type="DateTime" Precision="3" />
+    <Property Name="ClientId" Type="Int32" />
+    <Property Name="Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table_ClientData" Relationship="Self.FK_MemberDetails_Table_ClientData" FromRole="MemberDetails" ToRole="Table_ClientData" />
+  </EntityType>
+  <EntityType Name="Table_Appointment">
+    <Key>
+      <PropertyRef Name="Appointment_ID" />
+    </Key>
+    <Property Name="Appointment_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Client_ID" Type="Int32" />
+    <Property Name="Appointment_Duration" Type="Double" />
+    <Property Name="Appointment_Slot_ID" Type="Int32" />
+    <Property Name="IsAppointCancelled" Type="Boolean" />
+    <Property Name="IsRescheduled" Type="Boolean" />
+    <Property Name="ReasonForCancelling" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CapturedDatetime" Type="DateTime" Precision="3" />
+    <Property Name="EditedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="IsApproved" Type="Boolean" />
+    <Property Name="CurrentPatient" Type="Boolean" />
+    <Property Name="EmailAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Contact_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Passport_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Id_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Table_Appointment_Slot" Relationship="Self.FK_Table_Appointment_Table_Appointment_Slot" FromRole="Table_Appointment" ToRole="Table_Appointment_Slot" />
+    <NavigationProperty Name="Table_ClientData" Relationship="Self.FK_Table_Appointment_Table_ClientData" FromRole="Table_Appointment" ToRole="Table_ClientData" />
+    <NavigationProperty Name="Table_Client_Note" Relationship="Self.FK_Table_Client_Note_Table_Appointment" FromRole="Table_Appointment" ToRole="Table_Client_Note" />
+  </EntityType>
+  <EntityType Name="Table_Appointment_Slot">
+    <Key>
+      <PropertyRef Name="Appointment_SLot_ID" />
+    </Key>
+    <Property Name="Appointment_SLot_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Appointment_Slot_Date" Type="DateTime" Precision="3" />
+    <Property Name="Appointment_Slot_Start" Type="DateTime" Precision="3" />
+    <Property Name="Appointment_Slot_End" Type="DateTime" Precision="3" />
+    <Property Name="EditedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="CapturedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="Duration" Type="Double" />
+    <Property Name="Booked" Type="Boolean" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <NavigationProperty Name="Table_Appointment" Relationship="Self.FK_Table_Appointment_Table_Appointment_Slot" FromRole="Table_Appointment_Slot" ToRole="Table_Appointment" />
+  </EntityType>
+  <EntityType Name="Table_Client_Note">
+    <Key>
+      <PropertyRef Name="Client_Note_ID" />
+    </Key>
+    <Property Name="Client_Note_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Client_ID" Type="Int32" />
+    <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Appointment_ID" Type="Int32" />
+    <NavigationProperty Name="Table_Appointment" Relationship="Self.FK_Table_Client_Note_Table_Appointment" FromRole="Table_Client_Note" ToRole="Table_Appointment" />
+  </EntityType>
+  <EntityType Name="Table_ClientData">
+    <Key>
+      <PropertyRef Name="Client_ClientID" />
+    </Key>
+    <Property Name="Client_ClientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Client_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Client_Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Client_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Client_Street2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Clientt_Suburb" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Client_Town" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Client_Province" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Client_Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Client_Tel_Home" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Client_Tel_Work" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Client_Tel_Cell" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Client_Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Client_Reference" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Client_ID_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Client_Date_Of_birth" Type="DateTime" Precision="3" />
+    <Property Name="CapturedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="EditedDate" Type="DateTime" Precision="3" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Height" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Weight" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="BMI_Reading" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Dep_Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Employer_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="PassportNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Createdby" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="MemberDetails" Relationship="Self.FK_MemberDetails_Table_ClientData" FromRole="Table_ClientData" ToRole="MemberDetails" />
+    <NavigationProperty Name="Table_Appointment" Relationship="Self.FK_Table_Appointment_Table_ClientData" FromRole="Table_ClientData" ToRole="Table_Appointment" />
+    <NavigationProperty Name="Medical_Aid_Details" Relationship="Self.FK_Medical_Aid_Details_Table_ClientData" FromRole="Table_ClientData" ToRole="Medical_Aid_Details" />
+    <NavigationProperty Name="Next_Of_Kin" Relationship="Self.FK_Next_Of_Kin_Table_ClientData" FromRole="Table_ClientData" ToRole="Next_Of_Kin" />
+    <NavigationProperty Name="Table_Invoice_Info" Relationship="Self.FK_Table_Invoice_Info_Table_ClientData" FromRole="Table_ClientData" ToRole="Table_Invoice_Info" />
+    <NavigationProperty Name="Table_MedicalCertificate" Relationship="Self.FK_Table_MedicalCertificate_Table_MedicalCertificate" FromRole="Table_ClientData" ToRole="Table_MedicalCertificate" />
+    <NavigationProperty Name="Table_Prescription" Relationship="Self.FK_Table_Prescription_Table_ClientData" FromRole="Table_ClientData" ToRole="Table_Prescription" />
+  </EntityType>
+  <EntityType Name="Table_Invoice_Info">
+    <Key>
+      <PropertyRef Name="Invoice_Info_ID" />
+    </Key>
+    <Property Name="Invoice_Info_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Invoice_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Invoice_Client_ID" Type="Int32" />
+    <Property Name="Invoice_Consultation" Type="Double" />
+    <Property Name="Invoice_Date" Type="DateTime" Precision="3" />
+    <Property Name="Invoice_Paid" Type="Boolean" />
+    <Property Name="Invoice_Payment_method" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Invoice_Is_Appointment" Type="Boolean" />
+    <Property Name="Invoice_Is_Supplements" Type="Boolean" />
+    <Property Name="Invoice_Total" Type="Double" />
+    <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Id_No" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EmailAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ContactDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Table_ClientData" Relationship="Self.FK_Table_Invoice_Info_Table_ClientData" FromRole="Table_Invoice_Info" ToRole="Table_ClientData" />
+    <NavigationProperty Name="Table_Invoice_Supplements" Relationship="Self.FK_Table_Invoice_Supplements_Table_Invoice_Info" FromRole="Table_Invoice_Info" ToRole="Table_Invoice_Supplements" />
+  </EntityType>
+  <EntityType Name="Table_Invoice_Supplements">
+    <Key>
+      <PropertyRef Name="Invoice_Supplements_ID" />
+    </Key>
+    <Property Name="Invoice_Supplements_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Invoice_Info_ID" Type="Int32" />
+    <Property Name="Supplement_ID" Type="Int32" />
+    <Property Name="Invoice_Supplements_Price" Type="Double" />
+    <Property Name="Invoice_Supplements_Quantity" Type="Int32" />
+    <Property Name="Invoice_Supplements_TotalPrice" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="CapturedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="EditedDateTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Table_Invoice_Info" Relationship="Self.FK_Table_Invoice_Supplements_Table_Invoice_Info" FromRole="Table_Invoice_Supplements" ToRole="Table_Invoice_Info" />
+    <NavigationProperty Name="Table_Supplement" Relationship="Self.FK_Table_Invoice_Supplements_Table_Supplement" FromRole="Table_Invoice_Supplements" ToRole="Table_Supplement" />
+  </EntityType>
+  <EntityType Name="Table_Supplement">
+    <Key>
+      <PropertyRef Name="Supplement_ID" />
+    </Key>
+    <Property Name="Supplement_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Supplement_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Supplement_Cost_Excl" Type="Double" />
+    <Property Name="Supplement_Cost_Incl" Type="Double" />
+    <Property Name="Supplement_Supplier_ID" Type="Int32" />
+    <Property Name="Supplement_Min_Levels" Type="Int32" />
+    <Property Name="Supplement_Stock_Levels" Type="Int32" />
+    <Property Name="Supplement_Nappi_Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Table_Invoice_Supplements" Relationship="Self.FK_Table_Invoice_Supplements_Table_Supplement" FromRole="Table_Supplement" ToRole="Table_Invoice_Supplements" />
+    <NavigationProperty Name="Table_Supplier" Relationship="Self.FK_Table_Supplement_Table_Supplier" FromRole="Table_Supplement" ToRole="Table_Supplier" />
+  </EntityType>
+  <EntityType Name="Table_Supplier">
+    <Key>
+      <PropertyRef Name="Supplier_ID" />
+    </Key>
+    <Property Name="Supplier_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Supplier_Contact_Person" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Supplier_Cell" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Supplier_Fax" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Supplier_Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Supplier_Bank" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Supplier_Branch_Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Supplier_Account_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Supplier_Type_Of_Account" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Supplier_Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Table_Supplement" Relationship="Self.FK_Table_Supplement_Table_Supplier" FromRole="Table_Supplier" ToRole="Table_Supplement" />
+  </EntityType>
+  <EntityType Name="Medical_Aid_Details">
+    <Key>
+      <PropertyRef Name="Med_Id" />
+    </Key>
+    <Property Name="Med_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Med_Aid_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Med_Aid_No" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Med_Option" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Client_Id" Type="Int32" />
+    <Property Name="CaptureDate" Type="DateTime" Precision="3" />
+    <Property Name="EditDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Table_ClientData" Relationship="Self.FK_Medical_Aid_Details_Table_ClientData" FromRole="Medical_Aid_Details" ToRole="Table_ClientData" />
+  </EntityType>
+  <EntityType Name="Next_Of_Kin">
+    <Key>
+      <PropertyRef Name="Kin_Id" />
+    </Key>
+    <Property Name="Kin_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Kin_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Kin_Relationship" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Kin_HM_Tel_No" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Kin_WK_Tel_No" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Kin_Cell_Tel_No" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EditDate" Type="DateTime" Precision="3" />
+    <Property Name="CaptureDate" Type="DateTime" Precision="3" />
+    <Property Name="Client_Id" Type="Int32" />
+    <NavigationProperty Name="Table_ClientData" Relationship="Self.FK_Next_Of_Kin_Table_ClientData" FromRole="Next_Of_Kin" ToRole="Table_ClientData" />
+  </EntityType>
+  <EntityType Name="Table_ArticleKeyword">
+    <Key>
+      <PropertyRef Name="ArticleKeywordID" />
+    </Key>
+    <Property Name="ArticleKeywordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Keyword" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="OriginalArticle" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LinkedArticle" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CapturedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="EditedDateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Table_BlogPost">
+    <Key>
+      <PropertyRef Name="BlogPost_ID" />
+    </Key>
+    <Property Name="BlogPost_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FileData" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ContentType" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="BlogText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CapturedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="EditedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="CapturedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EditedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PostViews" Type="Int32" />
+    <Property Name="StringParam" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ThumbFileData" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ThumbContentType" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Table_BlogPostKeyword" Relationship="Self.FK_Table_BlogPostKeyword_Table_BlogPost" FromRole="Table_BlogPost" ToRole="Table_BlogPostKeyword" />
+  </EntityType>
+  <EntityType Name="Table_BlogPostKeyword">
+    <Key>
+      <PropertyRef Name="BlogPostKeywordID" />
+    </Key>
+    <Property Name="BlogPostKeywordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Keyword" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="BlogPost_ID" Type="Int32" />
+    <Property Name="CapturedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="EditedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EditedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Table_BlogPost" Relationship="Self.FK_Table_BlogPostKeyword_Table_BlogPost" FromRole="Table_BlogPostKeyword" ToRole="Table_BlogPost" />
+  </EntityType>
+  <EntityType Name="Table_MedicalCertificate">
+    <Key>
+      <PropertyRef Name="MedicalCertificateID" />
+    </Key>
+    <Property Name="MedicalCertificateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Client_ID" Type="Int32" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ConsultedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="AdmittedFrom" Type="DateTime" Precision="3" />
+    <Property Name="AdmittedTo" Type="DateTime" Precision="3" />
+    <Property Name="UnfitSince" Type="DateTime" Precision="3" />
+    <Property Name="NatureOfIllness" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ResumeDate" Type="DateTime" Precision="3" />
+    <Property Name="SignatureDate" Type="DateTime" Precision="3" />
+    <Property Name="CapturedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="EditedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="EditedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Table_ClientData" Relationship="Self.FK_Table_MedicalCertificate_Table_MedicalCertificate" FromRole="Table_MedicalCertificate" ToRole="Table_ClientData" />
+  </EntityType>
+  <EntityType Name="Table_Prescription">
+    <Key>
+      <PropertyRef Name="PrescriptionID" />
+    </Key>
+    <Property Name="PrescriptionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="IdentificationCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PrescriptionNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SignatureDateTime" Type="DateTime" Precision="3" />
+    <Property Name="CapturedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="EditedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="ClientID" Type="Int32" />
+    <NavigationProperty Name="Table_ClientData" Relationship="Self.FK_Table_Prescription_Table_ClientData" FromRole="Table_Prescription" ToRole="Table_ClientData" />
+  </EntityType>
+  <EntityType Name="UserProfile">
+    <Key>
+      <PropertyRef Name="UserProfileId" />
+    </Key>
+    <Property Name="UserProfileId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ContactNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="UserId" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MemberDetails_Table_ClientData">
+    <End Role="Table_ClientData" Type="Self.Table_ClientData" Multiplicity="0..1" />
+    <End Role="MemberDetails" Type="Self.MemberDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_ClientData">
+        <PropertyRef Name="Client_ClientID" />
+      </Principal>
+      <Dependent Role="MemberDetails">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Appointment_Table_Appointment_Slot">
+    <End Role="Table_Appointment_Slot" Type="Self.Table_Appointment_Slot" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Table_Appointment" Type="Self.Table_Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Appointment_Slot">
+        <PropertyRef Name="Appointment_SLot_ID" />
+      </Principal>
+      <Dependent Role="Table_Appointment">
+        <PropertyRef Name="Appointment_Slot_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Appointment_Table_ClientData">
+    <End Role="Table_ClientData" Type="Self.Table_ClientData" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Table_Appointment" Type="Self.Table_Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_ClientData">
+        <PropertyRef Name="Client_ClientID" />
+      </Principal>
+      <Dependent Role="Table_Appointment">
+        <PropertyRef Name="Client_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Client_Note_Table_Appointment">
+    <End Role="Table_Appointment" Type="Self.Table_Appointment" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Table_Client_Note" Type="Self.Table_Client_Note" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Appointment">
+        <PropertyRef Name="Appointment_ID" />
+      </Principal>
+      <Dependent Role="Table_Client_Note">
+        <PropertyRef Name="Appointment_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Medical_Aid_Details_Table_ClientData">
+    <End Role="Table_ClientData" Type="Self.Table_ClientData" Multiplicity="0..1" />
+    <End Role="Medical_Aid_Details" Type="Self.Medical_Aid_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_ClientData">
+        <PropertyRef Name="Client_ClientID" />
+      </Principal>
+      <Dependent Role="Medical_Aid_Details">
+        <PropertyRef Name="Client_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Next_Of_Kin_Table_ClientData">
+    <End Role="Table_ClientData" Type="Self.Table_ClientData" Multiplicity="0..1" />
+    <End Role="Next_Of_Kin" Type="Self.Next_Of_Kin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_ClientData">
+        <PropertyRef Name="Client_ClientID" />
+      </Principal>
+      <Dependent Role="Next_Of_Kin">
+        <PropertyRef Name="Client_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Invoice_Info_Table_ClientData">
+    <End Role="Table_ClientData" Type="Self.Table_ClientData" Multiplicity="0..1" />
+    <End Role="Table_Invoice_Info" Type="Self.Table_Invoice_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_ClientData">
+        <PropertyRef Name="Client_ClientID" />
+      </Principal>
+      <Dependent Role="Table_Invoice_Info">
+        <PropertyRef Name="Invoice_Client_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_MedicalCertificate_Table_MedicalCertificate">
+    <End Role="Table_ClientData" Type="Self.Table_ClientData" Multiplicity="1" />
+    <End Role="Table_MedicalCertificate" Type="Self.Table_MedicalCertificate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_ClientData">
+        <PropertyRef Name="Client_ClientID" />
+      </Principal>
+      <Dependent Role="Table_MedicalCertificate">
+        <PropertyRef Name="Client_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Prescription_Table_ClientData">
+    <End Role="Table_ClientData" Type="Self.Table_ClientData" Multiplicity="0..1" />
+    <End Role="Table_Prescription" Type="Self.Table_Prescription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_ClientData">
+        <PropertyRef Name="Client_ClientID" />
+      </Principal>
+      <Dependent Role="Table_Prescription">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Invoice_Supplements_Table_Invoice_Info">
+    <End Role="Table_Invoice_Info" Type="Self.Table_Invoice_Info" Multiplicity="0..1" />
+    <End Role="Table_Invoice_Supplements" Type="Self.Table_Invoice_Supplements" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Invoice_Info">
+        <PropertyRef Name="Invoice_Info_ID" />
+      </Principal>
+      <Dependent Role="Table_Invoice_Supplements">
+        <PropertyRef Name="Invoice_Info_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Invoice_Supplements_Table_Supplement">
+    <End Role="Table_Supplement" Type="Self.Table_Supplement" Multiplicity="0..1" />
+    <End Role="Table_Invoice_Supplements" Type="Self.Table_Invoice_Supplements" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Supplement">
+        <PropertyRef Name="Supplement_ID" />
+      </Principal>
+      <Dependent Role="Table_Invoice_Supplements">
+        <PropertyRef Name="Supplement_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Supplement_Table_Supplier">
+    <End Role="Table_Supplier" Type="Self.Table_Supplier" Multiplicity="0..1" />
+    <End Role="Table_Supplement" Type="Self.Table_Supplement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Supplier">
+        <PropertyRef Name="Supplier_ID" />
+      </Principal>
+      <Dependent Role="Table_Supplement">
+        <PropertyRef Name="Supplement_Supplier_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_BlogPostKeyword_Table_BlogPost">
+    <End Role="Table_BlogPost" Type="Self.Table_BlogPost" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Table_BlogPostKeyword" Type="Self.Table_BlogPostKeyword" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_BlogPost">
+        <PropertyRef Name="BlogPost_ID" />
+      </Principal>
+      <Dependent Role="Table_BlogPostKeyword">
+        <PropertyRef Name="BlogPost_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="stagingclinicEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+    <EntitySet Name="EmailLogs" EntityType="Self.EmailLog" />
+    <EntitySet Name="MemberDetails" EntityType="Self.MemberDetail" />
+    <EntitySet Name="Table_Appointment" EntityType="Self.Table_Appointment" />
+    <EntitySet Name="Table_Appointment_Slot" EntityType="Self.Table_Appointment_Slot" />
+    <EntitySet Name="Table_Client_Note" EntityType="Self.Table_Client_Note" />
+    <EntitySet Name="Table_ClientData" EntityType="Self.Table_ClientData" />
+    <EntitySet Name="Table_Invoice_Info" EntityType="Self.Table_Invoice_Info" />
+    <EntitySet Name="Table_Invoice_Supplements" EntityType="Self.Table_Invoice_Supplements" />
+    <EntitySet Name="Table_Supplement" EntityType="Self.Table_Supplement" />
+    <EntitySet Name="Table_Supplier" EntityType="Self.Table_Supplier" />
+    <EntitySet Name="Medical_Aid_Details" EntityType="Self.Medical_Aid_Details" />
+    <EntitySet Name="Next_Of_Kin" EntityType="Self.Next_Of_Kin" />
+    <EntitySet Name="Table_ArticleKeyword" EntityType="Self.Table_ArticleKeyword" />
+    <EntitySet Name="Table_BlogPost" EntityType="Self.Table_BlogPost" />
+    <EntitySet Name="Table_BlogPostKeyword" EntityType="Self.Table_BlogPostKeyword" />
+    <EntitySet Name="Table_MedicalCertificate" EntityType="Self.Table_MedicalCertificate" />
+    <EntitySet Name="Table_Prescription" EntityType="Self.Table_Prescription" />
+    <EntitySet Name="UserProfiles" EntityType="Self.UserProfile" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MemberDetails_Table_ClientData" Association="Self.FK_MemberDetails_Table_ClientData">
+      <End Role="Table_ClientData" EntitySet="Table_ClientData" />
+      <End Role="MemberDetails" EntitySet="MemberDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Appointment_Table_Appointment_Slot" Association="Self.FK_Table_Appointment_Table_Appointment_Slot">
+      <End Role="Table_Appointment_Slot" EntitySet="Table_Appointment_Slot" />
+      <End Role="Table_Appointment" EntitySet="Table_Appointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Appointment_Table_ClientData" Association="Self.FK_Table_Appointment_Table_ClientData">
+      <End Role="Table_ClientData" EntitySet="Table_ClientData" />
+      <End Role="Table_Appointment" EntitySet="Table_Appointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Client_Note_Table_Appointment" Association="Self.FK_Table_Client_Note_Table_Appointment">
+      <End Role="Table_Appointment" EntitySet="Table_Appointment" />
+      <End Role="Table_Client_Note" EntitySet="Table_Client_Note" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Medical_Aid_Details_Table_ClientData" Association="Self.FK_Medical_Aid_Details_Table_ClientData">
+      <End Role="Table_ClientData" EntitySet="Table_ClientData" />
+      <End Role="Medical_Aid_Details" EntitySet="Medical_Aid_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Next_Of_Kin_Table_ClientData" Association="Self.FK_Next_Of_Kin_Table_ClientData">
+      <End Role="Table_ClientData" EntitySet="Table_ClientData" />
+      <End Role="Next_Of_Kin" EntitySet="Next_Of_Kin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Invoice_Info_Table_ClientData" Association="Self.FK_Table_Invoice_Info_Table_ClientData">
+      <End Role="Table_ClientData" EntitySet="Table_ClientData" />
+      <End Role="Table_Invoice_Info" EntitySet="Table_Invoice_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_MedicalCertificate_Table_MedicalCertificate" Association="Self.FK_Table_MedicalCertificate_Table_MedicalCertificate">
+      <End Role="Table_ClientData" EntitySet="Table_ClientData" />
+      <End Role="Table_MedicalCertificate" EntitySet="Table_MedicalCertificate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Prescription_Table_ClientData" Association="Self.FK_Table_Prescription_Table_ClientData">
+      <End Role="Table_ClientData" EntitySet="Table_ClientData" />
+      <End Role="Table_Prescription" EntitySet="Table_Prescription" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Invoice_Supplements_Table_Invoice_Info" Association="Self.FK_Table_Invoice_Supplements_Table_Invoice_Info">
+      <End Role="Table_Invoice_Info" EntitySet="Table_Invoice_Info" />
+      <End Role="Table_Invoice_Supplements" EntitySet="Table_Invoice_Supplements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Invoice_Supplements_Table_Supplement" Association="Self.FK_Table_Invoice_Supplements_Table_Supplement">
+      <End Role="Table_Supplement" EntitySet="Table_Supplement" />
+      <End Role="Table_Invoice_Supplements" EntitySet="Table_Invoice_Supplements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Supplement_Table_Supplier" Association="Self.FK_Table_Supplement_Table_Supplier">
+      <End Role="Table_Supplier" EntitySet="Table_Supplier" />
+      <End Role="Table_Supplement" EntitySet="Table_Supplement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_BlogPostKeyword_Table_BlogPost" Association="Self.FK_Table_BlogPostKeyword_Table_BlogPost">
+      <End Role="Table_BlogPost" EntitySet="Table_BlogPost" />
+      <End Role="Table_BlogPostKeyword" EntitySet="Table_BlogPostKeyword" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
